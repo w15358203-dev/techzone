@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="google-site-verification" content="ssbYC3ZKjok2PTPfg2yMgmzyJ_yyYMkSuA32Zvx-WD4" />
+
+<title>TechZone - Pakistan ka Best Electronics Store</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8}
+  /* NAVBAR */
+  .navbar{background:#0a0a1a;color:#fff;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  .logo{font-size:22px;font-weight:700;color:#00c8ff;letter-spacing:1px;text-decoration:none}
+  .logo span{color:#fff}
+  .nav-links{display:flex;gap:24px;list-style:none}
+  .nav-links a{color:#ccc;text-decoration:none;font-size:14px;cursor:pointer;transition:color 0.2s}
+  .nav-links a:hover{color:#00c8ff}
+  .cart-btn{background:#00c8ff;color:#0a0a1a;border:none;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px}
+  .cart-count{background:#e24b4a;color:#fff;border-radius:50%;width:20px;height:20px;font-size:12px;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0a0a1a 0%,#0d1b3e 60%,#0a2a4a 100%);color:#fff;padding:80px 32px;text-align:center}
+  .hero h1{font-size:42px;font-weight:700;margin-bottom:14px;line-height:1.2}
+  .hero h1 span{color:#00c8ff}
+  .hero p{color:#aaa;font-size:17px;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{background:#00c8ff;color:#0a0a1a;border:none;padding:13px 32px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:opacity 0.2s}
+  .btn-primary:hover{opacity:0.85}
+  .btn-secondary{background:transparent;color:#fff;border:2px solid #00c8ff;padding:13px 32px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:background 0.2s}
+  .btn-secondary:hover{background:rgba(0,200,255,0.1)}
+  .hero-badge{display:inline-block;background:rgba(0,200,255,0.15);border:1px solid #00c8ff;color:#00c8ff;padding:5px 16px;border-radius:20px;font-size:13px;margin-bottom:20px}
+
+  /* STATS */
+  .stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:24px 32px;background:#0d1426;border-bottom:1px solid #1a2a4a}
+  .stat{text-align:center;color:#fff}
+  .stat-num{font-size:24px;font-weight:700;color:#00c8ff}
+  .stat-label{font-size:12px;color:#888;margin-top:2px}
+
+  /* SECTION */
+  .section{padding:48px 32px;max-width:1200px;margin:0 auto}
+  .section-title{font-size:22px;font-weight:700;color:#1a1a2e;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+  .section-title::after{content:'';flex:1;height:2px;background:linear-gradient(to right,#00c8ff,transparent);margin-left:12px}
+
+  /* CATEGORIES */
+  .categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-bottom:48px}
+  .cat-card{background:#fff;border:1.5px solid #e0e8f0;border-radius:12px;padding:20px 10px;text-align:center;cursor:pointer;transition:all 0.2s}
+  .cat-card:hover,.cat-card.active{border-color:#00c8ff;background:#e6f9ff}
+  .cat-icon{font-size:32px;margin-bottom:8px}
+  .cat-card p{font-size:13px;color:#444;font-weight:500}
+
+  /* SEARCH */
+  .search-bar{display:flex;gap:10px;margin-bottom:28px}
+  .search-bar input{flex:1;padding:11px 16px;border:1.5px solid #dde4ee;border-radius:8px;font-size:14px;outline:none;transition:border 0.2s}
+  .search-bar input:focus{border-color:#00c8ff}
+  .search-bar button{background:#00c8ff;color:#0a0a1a;border:none;padding:11px 24px;border-radius:8px;font-weight:600;cursor:pointer;font-size:14px}
+
+  /* PRODUCTS */
+  .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+  .product-card{background:#fff;border:1.5px solid #e0e8f0;border-radius:14px;overflow:hidden;cursor:pointer;transition:all 0.2s;position:relative}
+  .product-card:hover{border-color:#00c8ff;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,200,255,0.15)}
+  .product-img{background:linear-gradient(135deg,#e8f4ff,#f0f8ff);height:150px;display:flex;align-items:center;justify-content:center;font-size:64px}
+  .product-info{padding:14px}
+  .product-name{font-size:14px;font-weight:600;color:#1a1a2e;margin-bottom:4px}
+  .product-cat{font-size:11px;color:#888;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px}
+  .product-footer{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .price-wrap{}
+  .price{font-size:16px;font-weight:700;color:#00c8ff}
+  .old-price{font-size:11px;color:#aaa;text-decoration:line-through}
+  .add-btn{background:#0a0a1a;color:#00c8ff;border:1.5px solid #00c8ff;padding:7px 14px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s}
+  .add-btn:hover{background:#00c8ff;color:#0a0a1a}
+  .badge-hot{position:absolute;top:10px;left:10px;background:#e24b4a;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+  .badge-sale{position:absolute;top:10px;right:10px;background:#0d8a4e;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+
+  /* FEATURES */
+  .features-strip{background:#0a0a1a;padding:40px 32px;margin-top:48px}
+  .features-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+  .feat{display:flex;align-items:center;gap:16px;color:#fff}
+  .feat-icon{font-size:36px;flex-shrink:0}
+  .feat h3{font-size:15px;font-weight:600;margin-bottom:3px}
+  .feat p{font-size:12px;color:#888}
+
+  /* DEALS SECTION */
+  .deals-banner{background:linear-gradient(135deg,#0d1b3e,#0a2a4a);border-radius:14px;padding:32px;color:#fff;text-align:center;margin:48px 0}
+  .deals-banner h2{font-size:28px;font-weight:700;margin-bottom:10px}
+  .deals-banner h2 span{color:#00c8ff}
+  .deals-banner p{color:#aaa;margin-bottom:20px}
+  .countdown{display:flex;gap:16px;justify-content:center;margin-bottom:24px}
+  .count-box{background:rgba(0,200,255,0.1);border:1px solid #00c8ff;border-radius:8px;padding:12px 20px;text-align:center}
+  .count-num{font-size:28px;font-weight:700;color:#00c8ff;display:block}
+  .count-label{font-size:11px;color:#888}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:30px;right:24px;background:#0a0a1a;color:#00c8ff;border:1px solid #00c8ff;padding:12px 22px;border-radius:10px;font-size:14px;display:none;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+
+  /* CART MODAL */
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200}
+  .modal{background:#fff;max-width:420px;margin:40px auto;border-radius:16px;padding:24px;max-height:80vh;overflow-y:auto}
+  .modal h2{font-size:18px;font-weight:700;margin-bottom:16px;color:#1a1a2e;display:flex;justify-content:space-between}
+  .modal h2 button{background:none;border:none;font-size:20px;cursor:pointer;color:#888}
+  .cart-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee;font-size:14px}
+  .cart-item-name{color:#333;flex:1}
+  .cart-item-price{color:#00c8ff;font-weight:600;margin:0 12px}
+  .cart-item-remove{background:none;border:none;color:#e24b4a;cursor:pointer;font-size:16px}
+  .cart-total{margin-top:16px;text-align:right;font-size:16px;font-weight:700;color:#1a1a2e}
+  .cart-total span{color:#00c8ff}
+  .checkout-btn{width:100%;background:#00c8ff;color:#0a0a1a;border:none;padding:13px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:16px}
+  .empty-cart{text-align:center;color:#888;padding:24px;font-size:14px}
+
+  /* FOOTER */
+  .footer{background:#070714;color:#888;padding:40px 32px 24px}
+  .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;max-width:1200px;margin:0 auto 32px}
+  .footer h3{color:#fff;font-size:15px;margin-bottom:14px;font-weight:600}
+  .footer ul{list-style:none}
+  .footer ul li{margin-bottom:8px;font-size:13px;cursor:pointer}
+  .footer ul li:hover{color:#00c8ff}
+  .footer-bottom{border-top:1px solid #1a1a2e;padding-top:20px;text-align:center;font-size:13px;max-width:1200px;margin:0 auto}
+  .footer-bottom span{color:#00c8ff}
+
+  @media(max-width:600px){
+    .hero h1{font-size:28px}
+    .navbar{padding:12px 16px}
+    .nav-links{display:none}
+    .section{padding:32px 16px}
+    .stats{gap:20px;padding:20px 16px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a class="logo" href="#"><span>⚡</span> TechZone</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#deals">Deals</a></li>
+    <li><a href="#about">Contact</a></li>
+  </ul>
+  <button class="cart-btn" onclick="openCart()">
+    🛒 Cart <span class="cart-count" id="cartCount">0</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-badge">🇵🇰 Pakistan ka #1 Electronics Store</div>
+  <h1>Latest <span>Electronics</span><br>Best Prices Guaranteed</h1>
+  <p>Original products, warranty ke saath — fast delivery poore Pakistan mein!</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">🛍️ Shop Now</button>
+    <button class="btn-secondary" onclick="document.getElementById('deals').scrollIntoView({behavior:'smooth'})">🔥 View Deals</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">50,000+</div><div class="stat-label">Happy Customers</div></div>
+  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
+  <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Customer Rating</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Original Products</div></div>
+</div>
+
+<!-- CATEGORIES & PRODUCTS -->
+<div class="section" id="products">
+  <div class="section-title">📦 Categories</div>
+  <div class="categories" id="catGrid"></div>
+
+  <div class="section-title">🛒 Our Products</div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search karo... (e.g. iPhone, Samsung, Laptop)" oninput="searchProducts()">
+    <button onclick="searchProducts()">Search</button>
+  </div>
+  <div class="products" id="productGrid"></div>
+</div>
+
+<!-- DEALS BANNER -->
+<div class="section" id="deals">
+  <div class="deals-banner">
+    <h2>🔥 <span>Flash Sale</span> — Limited Time!</h2>
+    <p>Kuch ghanton mein khatam — abhi order karo!</p>
+    <div class="countdown">
+      <div class="count-box"><span class="count-num" id="hrs">05</span><span class="count-label">Hours</span></div>
+      <div class="count-box"><span class="count-num" id="mins">30</span><span class="count-label">Minutes</span></div>
+      <div class="count-box"><span class="count-num" id="secs">00</span><span class="count-label">Seconds</span></div>
+    </div>
+    <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Sale Dekho</button>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-strip">
+  <div class="features-inner">
+    <div class="feat"><div class="feat-icon">🚚</div><div><h3>Fast Delivery</h3><p>Poore Pakistan mein 2-3 din</p></div></div>
+    <div class="feat"><div class="feat-icon">✅</div><div><h3>100% Original</h3><p>Genuine products, warranty ke saath</p></div></div>
+    <div class="feat"><div class="feat-icon">↩️</div><div><h3>Easy Return</h3><p>7 din return policy</p></div></div>
+    <div class="feat"><div class="feat-icon">💳</div><div><h3>Easy Payment</h3><p>COD, card, jazzcash, easypaisa</p></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer" id="about">
+  <div class="footer-grid">
+    <div>
+      <h3>⚡ TechZone</h3>
+      <p style="font-size:13px;line-height:1.7">Pakistan ka trusted electronics store. Latest gadgets, best prices.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</li>
+        <li onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Products</li>
+        <li onclick="document.getElementById('deals').scrollIntoView({behavior:'smooth'})">Deals</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Categories</h3>
+      <ul>
+        <li>Mobiles</li><li>Laptops</li><li>Audio</li><li>Gaming</li><li>Cameras</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>📍 Layyah, Punjab</li>
+        <li>📞 0300-1234567</li>
+        <li>📧 info@techzone.pk</li>
+        <li>🕐 Mon-Sat 9am-9pm</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 <span>TechZone</span> — Pakistan ka Apna Electronics Store 🇵🇰 | Layyah | Lahore | Karachi | Islamabad</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- CART MODAL -->
+<div class="modal-bg" id="modalBg" onclick="closeCart()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>🛒 Mera Cart <button onclick="closeCart()">✕</button></h2>
+    <div id="cartItems"></div>
+    <div class="cart-total" id="cartTotal" style="display:none"></div>
+    <button class="checkout-btn" id="checkoutBtn" style="display:none" onclick="checkout()">Order Karo (COD Available)</button>
+  </div>
+</div>
+
+<script>
+const products = [
+  {id:1,name:'Samsung Galaxy S24',cat:'Mobile',price:189999,old:210000,icon:'📱',hot:true,sale:false},
+  {id:2,name:'iPhone 15 Pro',cat:'Mobile',price:349999,old:380000,icon:'📱',hot:false,sale:true},
+  {id:3,name:'Xiaomi Redmi 13',cat:'Mobile',price:45000,old:52000,icon:'📱',hot:true,sale:false},
+  {id:4,name:'Dell Laptop i7 13th Gen',cat:'Laptop',price:145000,old:165000,icon:'💻',hot:true,sale:true},
+  {id:5,name:'MacBook Air M2',cat:'Laptop',price:299000,old:320000,icon:'💻',hot:false,sale:false},
+  {id:6,name:'HP Pavilion 15',cat:'Laptop',price:98000,old:115000,icon:'💻',hot:false,sale:true},
+  {id:7,name:'Sony WH-1000XM5',cat:'Audio',price:65000,old:78000,icon:'🎧',hot:true,sale:false},
+  {id:8,name:'Realme Buds Air 5',cat:'Audio',price:8999,old:11000,icon:'🎧',hot:true,sale:false},
+  {id:9,name:'Samsung 55" 4K TV',cat:'TV',price:185000,old:210000,icon:'📺',hot:false,sale:true},
+  {id:10,name:'TCL 43" Smart TV',cat:'TV',price:75000,old:88000,icon:'📺',hot:false,sale:false},
+  {id:11,name:'PS5 Console',cat:'Gaming',price:145000,old:160000,icon:'🎮',hot:true,sale:false},
+  {id:12,name:'Xbox Series X',cat:'Gaming',price:130000,old:148000,icon:'🎮',hot:false,sale:true},
+  {id:13,name:'Canon EOS R50',cat:'Camera',price:135000,old:150000,icon:'📷',hot:false,sale:false},
+  {id:14,name:'GoPro Hero 12',cat:'Camera',price:65000,old:75000,icon:'📷',hot:true,sale:true},
+  {id:15,name:'USB-C Hub 7in1',cat:'Accessories',price:4500,old:5500,icon:'🔌',hot:false,sale:false},
+  {id:16,name:'Logitech MX Keys',cat:'Accessories',price:22000,old:26000,icon:'⌨️',hot:false,sale:true},
+];
+
+const cats = ['All','Mobile','Laptop','Audio','TV','Gaming','Camera','Accessories'];
+const catIcons = {'All':'🛍️','Mobile':'📱','Laptop':'💻','Audio':'🎧','TV':'📺','Gaming':'🎮','Camera':'📷','Accessories':'🔌'};
+let cart = [];
+let activeCat = 'All';
+
+function fmt(n){return 'Rs. '+n.toLocaleString('en-PK')}
+
+function renderCats(){
+  document.getElementById('catGrid').innerHTML = cats.map(c=>`
+    <div class="cat-card ${activeCat===c?'active':''}" onclick="filterCat('${c}')">
+      <div class="cat-icon">${catIcons[c]}</div>
+      <p>${c}</p>
+    </div>`).join('');
+}
+
+function filterCat(cat){
+  activeCat=cat;
+  renderCats();
+  document.getElementById('searchInput').value='';
+  renderProducts(activeCat==='All'?products:products.filter(p=>p.cat===cat));
+}
+
+function searchProducts(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  const list=products.filter(p=>p.name.toLowerCase().includes(q)||(p.cat.toLowerCase().includes(q)));
+  renderProducts(list);
+}
+
+function renderProducts(list){
+  if(!list.length){
+    document.getElementById('productGrid').innerHTML='<p style="color:#888;padding:24px">Koi product nahi mila 😔</p>';
+    return;
+  }
+  document.getElementById('productGrid').innerHTML=list.map(p=>`
+    <div class="product-card">
+      ${p.hot?'<div class="badge-hot">🔥 HOT</div>':''}
+      ${p.sale?'<div class="badge-sale">SALE</div>':''}
+      <div class="product-img">${p.icon}</div>
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-cat">${p.cat}</div>
+        <div class="product-footer">
+          <div class="price-wrap">
+            <div class="price">${fmt(p.price)}</div>
+            <div class="old-price">${fmt(p.old)}</div>
+          </div>
+          <button class="add-btn" onclick="addCart(${p.id})">+ Cart</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function addCart(id){
+  const p=products.find(x=>x.id===id);
+  const existing=cart.find(x=>x.id===id);
+  if(existing) existing.qty++;
+  else cart.push({...p,qty:1});
+  document.getElementById('cartCount').textContent=cart.reduce((a,x)=>a+x.qty,0);
+  showToast('✅ '+p.name+' cart mein add!');
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.display='block';
+  clearTimeout(window._toast);
+  window._toast=setTimeout(()=>t.style.display='none',2500);
+}
+
+function openCart(){
+  const bg=document.getElementById('modalBg');
+  bg.style.display='block';
+  const ci=document.getElementById('cartItems');
+  if(!cart.length){
+    ci.innerHTML='<div class="empty-cart">🛒 Cart khali hai!<br><small>Koi product add karo</small></div>';
+    document.getElementById('cartTotal').style.display='none';
+    document.getElementById('checkoutBtn').style.display='none';
+    return;
+  }
+  ci.innerHTML=cart.map(p=>`
+    <div class="cart-item">
+      <span class="cart-item-name">${p.icon} ${p.name} <small style="color:#aaa">x${p.qty}</small></span>
+      <span class="cart-item-price">${fmt(p.price*p.qty)}</span>
+      <button class="cart-item-remove" onclick="removeCart(${p.id})">✕</button>
+    </div>`).join('');
+  const total=cart.reduce((a,x)=>a+x.price*x.qty,0);
+  document.getElementById('cartTotal').style.display='block';
+  document.getElementById('cartTotal').innerHTML='Total: <span>'+fmt(total)+'</span>';
+  document.getElementById('checkoutBtn').style.display='block';
+}
+
+function removeCart(id){
+  cart=cart.filter(x=>x.id!==id);
+  document.getElementById('cartCount').textContent=cart.reduce((a,x)=>a+x.qty,0);
+  openCart();
+}
+
+function closeCart(){document.getElementById('modalBg').style.display='none'}
+
+function checkout(){
+  alert('🎉 Shukriya! Aapka order receive ho gaya.\nHamara agent aapko jald call karega.\n\nOrder Total: '+fmt(cart.reduce((a,x)=>a+x.price*x.qty,0)));
+  cart=[];
+  document.getElementById('cartCount').textContent=0;
+  closeCart();
+}
+
+// COUNTDOWN
+function startCountdown(){
+  let total=5*3600+30*60;
+  setInterval(()=>{
+    if(total<=0)total=5*3600+30*60;
+    total--;
+    document.getElementById('hrs').textContent=String(Math.floor(total/3600)).padStart(2,'0');
+    document.getElementById('mins').textContent=String(Math.floor((total%3600)/60)).padStart(2,'0');
+    document.getElementById('secs').textContent=String(total%60).padStart(2,'0');
+  },1000);
+}
+
+renderCats();
+renderProducts(products);
+startCountdown();
+</script>
+</body>
+</html>
